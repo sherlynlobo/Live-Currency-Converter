@@ -12,6 +12,8 @@
         <item>AUD</item>
         <item>CAD</item>
         <item>JPY</item>
+        <item>INR</item>
+
 
     </string-array>
 
@@ -26,6 +28,8 @@
         <item>AUD</item>
         <item>CAD</item>
         <item>JPY</item>
+        <item>INR</item>
+
 
     </string-array>
 </resources>
