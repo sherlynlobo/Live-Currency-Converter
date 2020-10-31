@@ -2,6 +2,8 @@ package com.sl.livecurrencyconverter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
@@ -26,6 +28,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         spinnerSetup()
+        textChanged()
+
+    }
+
+    private fun textChanged()
+    {
+        et_firstConversion.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                try{
+                    getApiResult()
+                } catch(e: Exception){
+                    Log.e("Main", "$e")
+
+                }
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                Log.d("Main", "Before Text Changed")
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                Log.d("Main", "On Text Changed")
+            }
+
+        })
 
     }
     private fun getApiResult()
